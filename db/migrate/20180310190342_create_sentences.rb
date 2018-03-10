@@ -3,6 +3,7 @@ class CreateSentences < ActiveRecord::Migration[5.1]
     create_table :sentences do |t|
       t.string :type
       t.text :sentence
+
     end
   end
 end
