@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'sentences#index'
+  
   resources :relationships
   resources :entertainments
   resources :numbers
