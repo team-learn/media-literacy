@@ -1,0 +1,16 @@
+.button-home {
+  width: 750px;
+  height: 150px;
+  margin: 10px;
+  font-size: 75px !important;
+}
+
+.media-title {
+  text-align: center;
+  font-size: 75px;
+  margin-bottom: 50px;
+}
+
+.home-page {
+  text-align: center;
+}

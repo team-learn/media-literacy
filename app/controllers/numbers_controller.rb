@@ -2,7 +2,7 @@ class NumbersController < ApplicationController
   before_action :set_number, only: [:show, :edit, :update, :destroy]
 
  def new_iteration
-   
+
    # add to sentences table from params
    # reload numbers_enter_sentences
 

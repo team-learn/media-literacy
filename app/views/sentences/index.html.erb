@@ -1,19 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Media Literacy Education Tool</h1>
+<h1 class="media-title text-warning">Media Literacy Education Tool</h1>
 
 
+<div class = 'home-page'>
+  <% @sentences.each do |sentence| %>
 
-<% @sentences.each do |sentence| %>
-  =
-    <%= sentence.sentence_type %>
-    <span class="sentence-buttons"><%= link_to sentence.sentence_type, show_sentences_path(sentence) %></span>
-    <h2> span <h2>
+  <%= link_to sentence.sentence_type, sentences_path, class: 'btn btn-secondary button-home' %>
+
     <!-- <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>
     <td><%= link_to 'Destroy', sentence, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
 
-<% end %>
-
+  <% end %>
+</div>
 
 <br>
 
