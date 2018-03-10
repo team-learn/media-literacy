@@ -7,6 +7,8 @@ class RelationshipsController < ApplicationController
     @relationships = Relationship.all
   end
 
+  def rel_enter_sentences
+  end
   # GET /relationships/1
   # GET /relationships/1.json
   def show

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root 'sentences#index'
-  
+  get '/definition' => 'definitions#def_enter_sentences'
+  get '/relationship' => 'relationships#rel_enter_sentences'
+  get '/number' => 'numbers#num_enter_sentences'
+  get '/entertainment' => 'entertainments#ent_enter_sentences'
   resources :relationships
   resources :entertainments
   resources :numbers
