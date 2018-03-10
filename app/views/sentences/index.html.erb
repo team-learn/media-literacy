@@ -6,8 +6,8 @@
 
 <% @sentences.each do |sentence| %>
   =
-    <%= sentence.type %>
-    <span class="sentence-buttons"><%= link_to sentence.type, show_sentence_path(sentence) %></span>
+    <%= sentence.sentence_type %>
+    <span class="sentence-buttons"><%= link_to sentence.sentence_type, show_sentences_path(sentence) %></span>
     <h2> span <h2>
     <!-- <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>
     <td><%= link_to 'Destroy', sentence, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->

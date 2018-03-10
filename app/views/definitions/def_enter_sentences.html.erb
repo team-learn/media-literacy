@@ -1,0 +1,15 @@
+<h1 class="intructions">Please enter your version of the following text:</h1>
+
+<div class="last"> <%= Definitions.last %> </div>
+
+<div class= "text-enter">
+<form action="new_iteration" method="post" id="new_iteration">
+  <input type="text" name="entry"/>
+  <textarea name="text" form="new_iteration" placeholder="Entry"></textarea>
+  <input type="submit" value="Submit"/>
+</form>
+</div>
+
+<form class="finish_game" action="show_all" method="post">
+  <input type="submit" value="End Game"/>
+</form>
