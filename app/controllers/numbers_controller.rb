@@ -3,9 +3,10 @@ class NumbersController < ApplicationController
 
  def new_iteration
 
-   # add to sentences table from params
-   # reload numbers_enter_sentences
-
+   @number = Number.new
+   @number.sentence = params[:text]
+   @number.save
+   render 'num_enter_sentences'
 
  end
 
