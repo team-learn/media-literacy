@@ -1,29 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sentences</h1>
+<h1>Media Literacy Education Tool</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Sentence</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @sentences.each do |sentence| %>
-      <tr>
-        <td><%= sentence.type %></td>
-        <td><%= sentence.sentence %></td>
-        <td><%= link_to 'Show', sentence %></td>
-        <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>
-        <td><%= link_to 'Destroy', sentence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+
+<% @sentences.each do |sentence| %>
+  =
+    <%= sentence.type %>
+    <span class="sentence-buttons"><%= link_to sentence.type, show_sentence_path(sentence) %></span>
+    <h2> span <h2>
+    <!-- <td><%= link_to 'Edit', edit_sentence_path(sentence) %></td>
+    <td><%= link_to 'Destroy', sentence, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+
+<% end %>
+
 
 <br>
 
-<%= link_to 'New Sentence', new_sentence_path %>
+<!-- <%= link_to 'New Sentence', new_sentence_path %> -->
