@@ -1,6 +1,20 @@
 class RelationshipsController < ApplicationController
   before_action :set_relationship, only: [:show, :edit, :update, :destroy]
 
+  def new_iteration
+    @relationship = Relationship.new
+    @relationship.sentence = params[:text]
+    @relationship.save
+    render 'rel_enter_sentences'
+  end
+
+  def show_all
+    # render show_all_enter_sentences
+  end
+
+
+
+
   # GET /relationships
   # GET /relationships.json
   def index

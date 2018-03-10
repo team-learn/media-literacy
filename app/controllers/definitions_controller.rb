@@ -1,6 +1,22 @@
 class DefinitionsController < ApplicationController
   before_action :set_definition, only: [:show, :edit, :update, :destroy]
 
+  def new_iteration
+
+    @definition = Definiton.new
+    @definition.sentence = params[:text]
+    @definition.save
+    render 'def_enter_sentences'
+
+  end
+
+  def show_all
+    # render show_all_enter_sentences
+  end
+
+
+
+
   # GET /definitions
   # GET /definitions.json
   def index

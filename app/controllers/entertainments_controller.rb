@@ -1,6 +1,23 @@
 class EntertainmentsController < ApplicationController
   before_action :set_entertainment, only: [:show, :edit, :update, :destroy]
 
+
+  def new_iteration
+
+    @entertainment = Entertainment.new
+    @entertainment.sentence = params[:text]
+    @entertainment.save
+    render 'ent_enter_sentences'
+
+  end
+
+  def show_all
+    # render show_all_enter_sentences
+  end
+
+
+
+
   # GET /entertainments
   # GET /entertainments.json
   def index
