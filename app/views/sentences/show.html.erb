@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @sentence.type %>
+</p>
+
+<p>
+  <strong>Sentence:</strong>
+  <%= @sentence.sentence %>
+</p>
+
+<%= link_to 'Edit', edit_sentence_path(@sentence) %> |
+<%= link_to 'Back', sentences_path %>
