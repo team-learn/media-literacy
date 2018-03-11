@@ -18,6 +18,11 @@ Rails.application.routes.draw do
   get 'number/all' => 'numbers#index'
   get 'entertainment/all' => 'entertainments#index'
 
+  get '/relationship/destroy' => 'relationships#delete_all'
+  get '/definition/destroy' => 'definitions#delete_all'
+  get '/number/destroy' => 'numbers#delete_all'
+  get '/entertainment/destroy' => 'entertainments#delete_all'
+
   resources :relationships
   resources :entertainments
   resources :numbers

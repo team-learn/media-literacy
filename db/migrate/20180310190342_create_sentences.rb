@@ -4,6 +4,6 @@ class CreateSentences < ActiveRecord::Migration[5.1]
       t.string :sentence_type
       t.text :sentence
 
-    end
+    end 
   end
 end

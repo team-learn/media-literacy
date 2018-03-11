@@ -4,7 +4,10 @@ class RelationshipsController < ApplicationController
   def new_iteration
     @relationship = Relationship.new
     @relationship.sentence = params[:text]
-    @relationship.save
+
+    s = Sentence.find_by(sentence_type: 'relationship')
+    @relationship.sentence_id = s.id
+    @relationship.save!
     render 'rel_enter_sentences'
   end
 
@@ -17,17 +20,20 @@ class RelationshipsController < ApplicationController
     # render show_all_enter_sentences
   end
 
+  def delete_all
+    @relationship = Relationship.delete_all() 
+    redirect_to '/'
 
+  end
 
 
   # GET /relationships
   # GET /relationships.json
   def index
     @relationships = Relationship.all
+    @sentence = Sentence.where({sentence_type: 'relationship'})
   end
 
-  def rel_enter_sentences
-  end
   # GET /relationships/1
   # GET /relationships/1.json
   def show

@@ -6,7 +6,10 @@ class EntertainmentsController < ApplicationController
 
     @entertainment = Entertainment.new
     @entertainment.sentence = params[:text]
-    @entertainment.save
+
+    s = Sentence.find_by(sentence_type: 'entertainment')
+    @entertainment.sentence_id = s.id
+    @entertainment.save!
     render 'ent_enter_sentences'
 
   end
@@ -20,13 +23,18 @@ class EntertainmentsController < ApplicationController
     # render show_all_enter_sentences
   end
 
+  def delete_all
+    @entertainment = Entertainment.delete_all() 
+    redirect_to '/'
 
+  end
 
 
   # GET /entertainments
   # GET /entertainments.json
   def index
     @entertainments = Entertainment.all
+    @sentence = Sentence.where({sentence_type: 'entertainment'})
   end
 
   # GET /entertainments/1

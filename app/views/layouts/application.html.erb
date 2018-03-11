@@ -12,5 +12,8 @@
 
   <body>
     <%= yield %>
+    <script>
+    setTimeout("$('.vanish').fadeOut('slow')", 10000)
+    </script>
   </body>
 </html>

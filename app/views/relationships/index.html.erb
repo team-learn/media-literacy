@@ -1,6 +1,13 @@
 
 
-<h1>Relationship Story</h1>
+<h1 class='end-header'>Relationship Story</h1>
+
+<div class="card bg-light mb-3" style="max-width: 50rem;">
+  <div class="card-header">Original Statement</div>
+  <div class="card-body">
+    <h4 class="card-title"><%=@sentence[0].sentence %></h4>
+  </div>
+</div>
 
 <% @relationships.each do |relationship| %>
   <div class="card bg-light mb-3" style="max-width: 50rem;">
@@ -13,6 +20,8 @@
 
 <br>
 
-<%= link_to 'Home Page', '/', class: 'btn btn-secondary' %>
+<div class='links'>
+<%= link_to 'Home Page', '/relationship/destroy', class: 'btn btn-secondary' %>
 <br>
 <%= link_to 'Learn more about Media Literacy', 'https://medialiteracynow.org/what-is-media-literacy/' %>
+</div>

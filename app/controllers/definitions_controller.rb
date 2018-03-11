@@ -5,7 +5,10 @@ class DefinitionsController < ApplicationController
 
     @definition = Definition.new
     @definition.sentence = params[:text]
-    @definition.save
+
+    s = Sentence.find_by(sentence_type: 'definition')
+    @definition.sentence_id = s.id
+    @definition.save!
     render 'def_enter_sentences'
 
   end
@@ -19,11 +22,17 @@ class DefinitionsController < ApplicationController
     # render show_all_enter_sentences
   end
 
+  def delete_all
+    @definition = Definition.delete_all() 
+    redirect_to '/'
+
+  end
 
   # GET /definitions
   # GET /definitions.json
   def index
     @definitions = Definition.all
+    @sentence = Sentence.where({sentence_type: 'definition'})
   end
 
   # GET /definitions/1

@@ -1,3 +1,3 @@
 class Relationship < ApplicationRecord
-  belongs_to :sentences
+  # belongs_to :sentences
 end

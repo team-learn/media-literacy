@@ -5,7 +5,10 @@ class NumbersController < ApplicationController
 
    @number = Number.new
    @number.sentence = params[:text]
-   @number.save
+
+   s = Sentence.find_by(sentence_type: 'number')
+   @number.sentence_id = s.id
+   @number.save!
    render 'num_enter_sentences'
 
  end
@@ -19,7 +22,11 @@ class NumbersController < ApplicationController
    # render show_all_enter_sentences
  end
 
+ def delete_all
+   @numbers = Number.delete_all() 
+   redirect_to '/'
 
+ end
 
 
 
@@ -28,6 +35,7 @@ class NumbersController < ApplicationController
   # GET /numbers.json
   def index
     @numbers = Number.all
+    @sentence = Sentence.where({sentence_type: 'number'})
   end
 
   # GET /numbers/1

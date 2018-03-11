@@ -1,3 +1,3 @@
 class Definition < ApplicationRecord
-  belongs_to :sentences
+  #belongs_to :sentences
 end
