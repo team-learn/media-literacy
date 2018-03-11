@@ -11,6 +11,11 @@ class EntertainmentsController < ApplicationController
 
   end
 
+  def ent_enter_sentences
+    @sentence = Sentence.where({sentence_type: 'entertainment'})
+    render 'ent_enter_sentences'
+  end
+
   def show_all
     # render show_all_enter_sentences
   end

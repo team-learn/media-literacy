@@ -10,6 +10,11 @@ class NumbersController < ApplicationController
 
  end
 
+ def num_enter_sentences
+   @sentence = Sentence.where({sentence_type: 'number'})
+   render 'num_enter_sentences'
+ end
+
  def show_all
    # render show_all_enter_sentences
  end
