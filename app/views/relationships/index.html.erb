@@ -1,29 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Relationships</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Sentence</th>
-      <th>Sentence</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h1>Relationship Story</h1>
 
-  <tbody>
-    <% @relationships.each do |relationship| %>
-      <tr>
-        <td><%= relationship.sentence %></td>
-        <td><%= relationship.sentence_id %></td>
-        <td><%= link_to 'Show', relationship %></td>
-        <td><%= link_to 'Edit', edit_relationship_path(relationship) %></td>
-        <td><%= link_to 'Destroy', relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @relationships.each do |relationship| %>
+  <div class="card bg-light mb-3" style="max-width: 50rem;">
+    <div class="card-header"><%= relationship.id %></div>
+    <div class="card-body">
+      <h4 class="card-title"><%= relationship.sentence %></h4>
+    </div>
+  </div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Relationship', new_relationship_path %>
+<%= link_to 'Home Page', '/', class: 'btn btn-secondary' %>
+<br>
+<%= link_to 'Learn more about Media Literacy', 'https://medialiteracynow.org/what-is-media-literacy/' %>

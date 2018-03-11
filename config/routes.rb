@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   get '/relationship' => 'relationships#rel_enter_sentences'
   get '/number' => 'numbers#num_enter_sentences'
   get '/entertainment' => 'entertainments#ent_enter_sentences'
+
+  get '/definition/all' => 'definitions#index'
+  get 'relationship/all' => 'relationships#index'
+  get 'number/all' => 'numbers#index'
+  get 'entertainment/all' => 'entertainments#index'
   resources :relationships
   resources :entertainments
   resources :numbers
