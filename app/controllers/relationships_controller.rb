@@ -8,6 +8,11 @@ class RelationshipsController < ApplicationController
     render 'rel_enter_sentences'
   end
 
+  def rel_enter_sentences
+    @sentence = Sentence.where({sentence_type: 'relationship'})
+    render 'rel_enter_sentences'
+  end
+
   def show_all
     # render show_all_enter_sentences
   end

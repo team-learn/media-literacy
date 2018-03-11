@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   get '/relationship' => 'relationships#rel_enter_sentences'
   get '/number' => 'numbers#num_enter_sentences'
   get '/entertainment' => 'entertainments#ent_enter_sentences'
+
+  post 'def_new_iteration' => 'definitions#new_iteration'
+  post 'rel_new_iteration' => 'relationships#new_iteration'
+  post 'num_new_iteration' => 'numbers#new_iteration'
+  post 'ent_new_iteration' => 'entertainments#new_iteration'
+
+
   resources :relationships
   resources :entertainments
   resources :numbers

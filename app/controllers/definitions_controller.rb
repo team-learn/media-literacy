@@ -3,18 +3,21 @@ class DefinitionsController < ApplicationController
 
   def new_iteration
 
-    @definition = Definiton.new
+    @definition = Definition.new
     @definition.sentence = params[:text]
     @definition.save
     render 'def_enter_sentences'
 
   end
 
+  def def_enter_sentences
+    @sentence = Sentence.where({sentence_type: 'definition'})
+    render 'def_enter_sentences'
+  end
+
   def show_all
     # render show_all_enter_sentences
   end
-
-
 
 
   # GET /definitions
